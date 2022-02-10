@@ -1,37 +1,40 @@
 import React, { Component } from 'react';
-import store from '../store';
+import { connect } from 'react-redux';
+import propTypes from 'prop-types';
 
-export default class Header extends Component {
-  componentDidMount() {
-    this.walletInfo();
+class Header extends Component {
+  // walletInfo = () => {
+  //   const { expenses } = store.getState().wallet;
+  //   const { currencies } = store.getState().wallet;
+  //   return { expenses, currencies };
+  // }
+
+  render() {
+    const { email } = this.props;
+    return (
+      <header>
+        <h4
+          data-testid="email-field"
+        >
+          {email}
+        </h4>
+        <h4 data-testid="total-field">
+          0
+        </h4>
+        <h4 data-testid="header-currency-field">
+          BRL
+        </h4>
+      </header>
+    );
   }
-
-    getEmail = () => {
-      const storeState = store.getState();
-      return (storeState.user.email);
-    }
-
-    walletInfo = () => {
-      const { expenses } = store.getState().wallet;
-      const { currencies } = store.getState().wallet;
-      return { expenses, currencies };
-    }
-
-    render() {
-      return (
-        <header>
-          <h4
-            data-testid="email-field"
-          >
-            {this.getEmail()}
-
-          </h4>
-
-          <p>
-            {this.walletInfo.currencies}
-            {this.walletInfo.expenses}
-          </p>
-        </header>
-      );
-    }
 }
+
+Header.propTypes = {
+  email: propTypes.string.isRequired,
+};
+
+const mapStateToProps = (state) => (
+  { email: state.user.email }
+);
+
+export default connect(mapStateToProps)(Header);
