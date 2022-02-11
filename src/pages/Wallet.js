@@ -2,7 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
-import { fetchCurrency, walletInfos } from '../actions';
+import { allCurrencies, allExchanges } from '../actions';
 // import walletAPI from '../services/walletAPI';
 
 class Wallet extends React.Component {
@@ -15,13 +15,12 @@ class Wallet extends React.Component {
       currency: '',
       method: '',
       tag: '',
-      exchangeRates: '',
     };
   }
 
   componentDidMount() {
-    const { saveCurrency } = this.props;
-    saveCurrency();
+    const { dispatch } = this.props;
+    dispatch(allCurrencies());
   }
 
   handleChange = ({ target }) => {
@@ -29,12 +28,11 @@ class Wallet extends React.Component {
     this.setState({ [name]: value });
   };
 
-  buttonClick = async () => {
+  buttonClick = () => {
     const { id } = this.state;
-    this.setState({ id: id + 1 });
-    const { dispatch, saveCurrency } = this.props;
-    dispatch(walletInfos(this.state));
-    await saveCurrency();
+    this.setState({ id: id + 1, value: '' });
+    const { dispatch } = this.props;
+    dispatch(allExchanges(this.state));
   }
 
   render() {
@@ -82,12 +80,13 @@ class Wallet extends React.Component {
               value={ currency }
               onChange={ this.handleChange }
             >
-              <option>USD</option>
-              {/* {
-                Object.keys(currencies).map((quote) => (
-                  <option key={ quote }>{quote}</option>
+              {
+                Object.keys(currencies).map((Moeda) => (
+                  <option key={ Moeda }>
+                    { Moeda }
+                  </option>
                 ))
-              } */}
+              }
             </select>
           </label>
           <label htmlFor="method-input">
@@ -149,12 +148,11 @@ class Wallet extends React.Component {
 
 Wallet.propTypes = {
   dispatch: propTypes.string.isRequired,
-  saveCurrency: propTypes.func.isRequired,
-  currencies: propTypes.arrayOf(propTypes.string).isRequired,
+  currencies: propTypes.string.isRequired,
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  saveCurrency: () => dispatch(fetchCurrency()),
+const mapStateToProps = (state) => ({
+  currencies: state.wallet.currencies,
 });
 
-export default connect(null, mapDispatchToProps)(Wallet);
+export default connect(mapStateToProps)(Wallet);
