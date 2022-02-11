@@ -23,8 +23,8 @@ class Login extends React.Component {
     const { email, password } = this.state;
     const includesAt = email.includes('@');
     const includesCom = email.includes('.com');
-    const passwordLength = 6;
-    const verifyPassword = password.length >= passwordLength;
+    const PASSWORD_LENGTH = 6;
+    const verifyPassword = password.length >= PASSWORD_LENGTH;
     const isButtonDisable = !(includesAt && includesCom && verifyPassword);
     return isButtonDisable;
   }
