@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
 import { allCurrencies, allExchanges } from '../actions';
+import Table from '../components/Table';
 // import walletAPI from '../services/walletAPI';
 
 class Wallet extends React.Component {
@@ -82,7 +83,10 @@ class Wallet extends React.Component {
             >
               {
                 Object.keys(currencies).map((Moeda) => (
-                  <option key={ Moeda }>
+                  <option
+                    data-testid={ Moeda.name }
+                    key={ Moeda }
+                  >
                     { Moeda }
                   </option>
                 ))
@@ -142,6 +146,7 @@ class Wallet extends React.Component {
             Adicionar despesa
           </button>
         </form>
+        <Table />
       </div>);
   }
 }
