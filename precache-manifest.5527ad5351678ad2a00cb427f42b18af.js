@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a97eabc58d2819d94e0cce2ff1d70c4a",
+    "revision": "3a3e0d7a7f5a7e88a3b51d0b9a91f826",
     "url": "/expensesadministrator/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/expensesadministrator/static/css/2.7e586bf7.chunk.css"
   },
   {
-    "revision": "db97f7724ea8ef767d5e",
+    "revision": "ad65c4ba80a18eb545ad",
     "url": "/expensesadministrator/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/expensesadministrator/static/js/2.4a42ce9b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "db97f7724ea8ef767d5e",
-    "url": "/expensesadministrator/static/js/main.58cd2465.chunk.js"
+    "revision": "ad65c4ba80a18eb545ad",
+    "url": "/expensesadministrator/static/js/main.28a22030.chunk.js"
   },
   {
     "revision": "5ddcf0e0fcb49b4cfa51",
