@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bulma/css/bulma.min.css';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import propTypes from 'prop-types';
@@ -45,12 +46,16 @@ class Login extends React.Component {
     return (
       <form>
         {redirect ? <Redirect to="/carteira" /> : ''}
-        <label htmlFor="email-input">
-          email
+        <label
+          className="label"
+          htmlFor="email-input"
+        >
+          Email
           <input
             type="email"
             id="email-input"
             name="email"
+            className="input is-normal"
             data-testid="email-input"
             placeholder="Email"
             value={ email }
@@ -61,6 +66,7 @@ class Login extends React.Component {
           Password
           <input
             type="password"
+            className="input is-normal"
             name="password"
             id="password-input"
             data-testid="password-input"
@@ -70,6 +76,7 @@ class Login extends React.Component {
           />
         </label>
         <button
+          className="button"
           type="button"
           disabled={ this.emailVerifiyer() }
           onClick={ this.buttonClick }
