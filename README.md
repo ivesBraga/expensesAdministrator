@@ -1,18 +1,25 @@
+
+### Boas vindas ao repositório do meu projeto Expenses Administrator!
+
+Esse projeto foi desenvolvido no módulo de frontend do curso de desevolvimento web na Trybe!
+É uma carteira com controle de gastos e conversor de moedas.
+A aplicação permite ao usuário:
+ * Visualizar uma tabela com seus gastos 
+ * Visualizar o total de gastos convertidos para uma moeda de escolha;
+
 ---
 
 # Habilidades
-Neste projeto, verificamos se voce é capaz de:
+Neste projeto, eu:
 
-  * Criar um store Redux em aplicações React
+  * Criei um store Redux em aplicações React
 
-  * Criar reducers no Redux em aplicações React
+  * Criei reducers no Redux em aplicações React
 
-  * Criar actions no Redux em aplicações React
+  * Criei actions no Redux em aplicações React
 
-  * Criar dispatchers no Redux em aplicações React
+  * Criei dispatchers no Redux em aplicações React
 
-  * Conectar Redux aos componentes React
+  * Conectei Redux aos componentes React
 
-  * Criar actions assíncronas na sua aplicação React que faz uso de Redux.
-
----
+  * Criei actions assíncronas na sua aplicação React que faz uso de Redux.
