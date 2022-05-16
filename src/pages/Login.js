@@ -45,7 +45,7 @@ class Login extends React.Component {
     } = this.state;
     return (
       <form>
-        {redirect ? <Redirect to="/expensesadministrator/carteira" /> : ''}
+        {redirect ? <Redirect to="/wallet" /> : ''}
         <label
           className="label"
           htmlFor="email-input"
