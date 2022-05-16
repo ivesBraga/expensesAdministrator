@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import 'bulma/css/bulma.min.css';
 import propTypes from 'prop-types';
 
 class Table extends Component {
   render() {
     const { expenses } = this.props;
     return (
-      <table>
+      <table className="table is-triped">
         <tr>
           <th>Descrição</th>
           <th>Tag</th>
